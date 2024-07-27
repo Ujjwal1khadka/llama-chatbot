@@ -7,22 +7,22 @@ from streamlit_extras.add_vertical_space import add_vertical_space
 
 import os
 
-st.subheader("Llama 3.1 405B Chatbot")
+st.subheader("ChatLlama")
 
-st.markdown("Built by [Build Fast with AI](https://www.buildfastwithai.com/genai-course)")
+st.markdown("Built by [Ujjwal Khadka](https://bento.me/khadkaujjwal)")
 
 with st.sidebar:
-    st.title("Llama 3.1 405B Chatbot")
+    st.title("Llama-3.1 Chatbot by Ujjwal Khadka")
     st.subheader("This app lets you chat with Llama 3.1 405B! [👉]")
     api_key = st.text_input("Enter your Fireworks API Key", type="password")
     add_vertical_space(2)
     st.markdown("""
-    Want to lean how to build this? 
+    Want to learn how to build this? 
    
-    Join [GenAI Course](https://www.buildfastwithai.com/genai-course) by Build Fast with AI!
+    Join [Medium](https://medium.com/@khadkaujjwal47)
     """)
     add_vertical_space(3)
-    st.write("Reach out to me on [LinkedIn](https://www.linkedin.com/in/satvik-paramkusham)")
+    st.write("Reach out to me on [LinkedIn](https://www.linkedin.com/in/ujjwal-khadka-94393816b/)")
 
 
 # Initialize session state variables
@@ -42,7 +42,7 @@ if api_key:
     if st.session_state.conversation is None:
         llm = ChatOpenAI(
             model="accounts/fireworks/models/llama-v3p1-405b-instruct",
-            openai_api_key='sk-proj-p6qwpxCwdniRTGF6sDD1T3BlbkFJZFvSoDFhcblZ8KBA30Lc',
+            openai_api_key=api_key,
             openai_api_base="https://api.fireworks.ai/inference/v1"
         )
         st.session_state.conversation = ConversationChain(
