@@ -20,7 +20,7 @@ Generate an API key from your account dashboard
 
 Run the Streamlit app:
 
-streamlit run llama3_chat.py
+streamlit run llama_chat.py
 
 4.When the app opens in your browser:
 
